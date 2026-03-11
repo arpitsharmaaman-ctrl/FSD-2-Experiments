@@ -19,7 +19,7 @@ function Home() {
       <div style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "8px", marginTop: "20px" }}>
         <h3>Dashboard Settings</h3>
 
-        {/* Component 1: TextField */}
+        
         <TextField 
           label="Dashboard Name" 
           placeholder="e.g. My Workspace" 
@@ -27,25 +27,25 @@ function Home() {
           onChange={(e) => setUsername(e.target.value)} 
         />
 
-        {/* Component 2: Select */}
+        
         <Select 
-          label="Theme Mode" 
-          options={["Light", "Dark", "High Contrast"]} 
+          label="Position" 
+          options={["Manager", "Assistant", "Supervisor"]} 
           value={theme} 
           onChange={(e) => setTheme(e.target.value)} 
         />
 
-        {/* Component 3: Checkbox */}
+        
         <Checkbox 
           label="Show Quick Stats Widgets" 
           checked={showWidgets} 
           onChange={(e) => setShowWidgets(e.target.checked)} 
         />
 
-        {/* Component 4: Rating */}
+        
         <Rating label="Rate the new layout" />
 
-        {/* Component 5: Button */}
+        
         <Button 
           text="Save Settings" 
           onClick={() => alert(`Settings Saved!\nName: ${username}\nTheme: ${theme}`)} 
