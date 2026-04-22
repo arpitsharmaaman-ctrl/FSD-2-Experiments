@@ -1,0 +1,7 @@
+[
+  "test_app.py::test_create_student",
+  "test_app.py::test_delete_student",
+  "test_app.py::test_get_student",
+  "test_app.py::test_get_students",
+  "test_app.py::test_update_student"
+]
