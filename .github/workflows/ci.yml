@@ -9,6 +9,7 @@ on:
 jobs:
   backend-test:
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: experiment-8
@@ -22,12 +23,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install pytest # Ensures pytest is available
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with: 
@@ -35,15 +30,18 @@ jobs:
 
       - name: Install Node dependencies
         run: npm install
+      
+      # Removed 'npm test' to avoid the "no test specified" error
 
-      - name: Run Node tests
-        run: npm test
+      - name: Install Pytest
+        run: pip install pytest
 
-      - name: Run Pytest
+      - name: Run backend tests
         run: pytest -v
 
   frontend-test:
     runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: experiment-6
